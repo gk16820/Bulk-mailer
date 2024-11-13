@@ -1,0 +1,262 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2980b9;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --background-color: #f5f6fa;
+  --text-color: #2c3e50;
+  --border-color: #dcdde1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mailer-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.file-upload {
+  border: 2px dashed var(--border-color);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.file-upload:hover {
+  border-color: var(--primary-color);
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-upload-label {
+  display: block;
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: rgb(245, 239, 239);
+}
+
+.button-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.button-full {
+  width: 100%;
+}
+
+.recipients-list {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  
+}
+
+.recipient-item {
+  padding: 0.5rem;
+  background-color: white;
+  margin-bottom: 0.5rem;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-message {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  text-align: center;
+  animation: fadeOut 8s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; 
+  }
+  99% {
+    opacity: 1; 
+  }
+  100% {
+    opacity: 0; 
+    visibility: hidden; 
+   }
+}
+
+
+.success {
+  /* background-color: var(--success-color); */
+  color:var(--success-color);
+}
+
+.error {
+  /* background-color: white ; */
+  color: red;
+}
+
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .mailer-container {
+    padding: 1rem;
+  }
+
+  .button {
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Rich Text Editor Styles */
+.quill-container {
+  margin-bottom: 20px;
+}
+
+.rich-text-editor {
+  height: 300px;
+  margin-bottom: 75px;
+}
+
+.ql-editor {
+  min-height: 200px;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 12px 15px;
+}
+
+.ql-toolbar.ql-snow {
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+  background: #f8f9fa;
+  padding: 8px;
+}
+
+.ql-container.ql-snow {
+  border: 1px solid #ddd;
+  border-radius: 0 0 4px 4px;
+  background: white;
+}
+
+.ql-snow .ql-tooltip {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #ddd;
+  color: #444;
+  padding: 5px 12px;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.ql-snow .ql-picker {
+  color: #444;
+}
+
+.ql-snow .ql-stroke {
+  stroke: #444;
+}
+
+.ql-snow .ql-fill {
+  fill: #444;
+}
+
+/* Responsive styles for the editor */
+@media (max-width: 768px) {
+  .rich-text-editor {
+    height: 250px;
+  }
+  
+  .ql-toolbar.ql-snow {
+    padding: 4px;
+  }
+  
+  .ql-editor {
+    font-size: 13px;
+  }
+}
